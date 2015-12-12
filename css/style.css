@@ -1,0 +1,48 @@
+body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
+	color: #fff;
+	text-align: center;
+}
+
+.full {
+  background: url(../img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: inset 0px 0px 0 2000px rgba(0,0,0,0.3);
+  min-height: 100%;
+  text-align: center;
+}
+
+.box{
+	width: 400px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 5% 0;
+}
+
+.box h1{
+	font-family: 'Noto Serif', serif;
+}
+
+#guess{
+	max-width: 280px;
+	text-align: center;
+	margin: 30px auto;
+	height: 46px;
+}
+
+.userInput{
+	text-align: center;
+}
+
+.glyphicon{
+	margin-right: 5px;
+}
+
+#hint{
+	margin-right: 5px;
+}
