@@ -51,6 +51,7 @@ function playersGuessSubmission(){
 		} else {
 			$('#remaining').text("You lost. Please restart the game.");
 			$('#lost').css("display", "block");
+			$('#guess').val('');
 			cleanUp();
 		}
 	}
