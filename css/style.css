@@ -1,6 +1,6 @@
 body {
-	margin-top: 50px;
-	margin-bottom: 50px;
+	/*margin-top: 50px;
+	margin-bottom: 50px;*/
 	background: none;
 	color: #fff;
 	text-align: center;
@@ -45,4 +45,17 @@ body {
 
 #hint{
 	margin-right: 5px;
+}
+
+#lost, #win{
+	display: none;
+	margin: auto;
+}
+
+.alert-danger{
+	display: none;
+	margin: 25px;
+    margin-top: -10px;
+    border-radius: 5px;
+    padding: 2px
 }
