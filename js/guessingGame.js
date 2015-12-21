@@ -53,8 +53,9 @@ var game = function () {
 				$('#remaining').text("You lost. Please restart the game.");
 				$('#lost').css("display", "block");
 				$('#guess').val('');
+				$('#hintText').text("The number was "+winningNumber);
 				cleanUp();	
-				restartOnEnter();
+				//restartOnEnter();
 			}
 		}
 	});
@@ -64,7 +65,6 @@ var game = function () {
 		$('#guess').hide();
 		$('#hint').hide();
 		$('#submit').hide();
-		$('#hintText').hide();
 		$('#restart').addClass('btn-danger');
 	}
 
@@ -100,7 +100,6 @@ var game = function () {
 			$('#win').css("display", "block");
 			$('#hintText').text("It took you "+guesses.length+" guesses");
 			cleanUp();
-			$('#hintText').show();
 		} else {
 			lowerOrHigher();
 		}	
