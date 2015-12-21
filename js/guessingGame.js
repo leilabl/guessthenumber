@@ -1,4 +1,4 @@
-// var game = function () {
+var game = function () {
     var guesses = [];
 	var playersGuess="";
 
@@ -36,7 +36,7 @@
 
 	// Fetch the Players Guess
 
-	function playersGuessSubmission(){
+	$('#submit').click(function playersGuessSubmission(){
 		playersGuess=parseInt($('#guess').val());
 		if (isNaN(playersGuess) || playersGuess < 1 || playersGuess > 100 ) {
 		    $('.alert-danger').css("display", "block");
@@ -54,9 +54,10 @@
 				$('#lost').css("display", "block");
 				$('#guess').val('');
 				cleanUp();	
+				restartOnEnter();
 			}
 		}
-	}
+	});
 
 	function cleanUp(){
 		$('#status').text("");
@@ -99,6 +100,7 @@
 			$('#win').css("display", "block");
 			$('#hintText').text("It took you "+guesses.length+" guesses");
 			cleanUp();
+			$('#hintText').show();
 		} else {
 			lowerOrHigher();
 		}	
@@ -106,7 +108,7 @@
 
 	// Create a provide hint button that provides additional clues to the "Player"
 
-	function provideHint(){
+	$('#hint').click(function provideHint(){
 		var hintTopRange = winningNumber + Math.floor(Math.random()*20 + 1);
 		if (hintTopRange > 100){
 			hintTopRange = 100;
@@ -118,12 +120,17 @@
 		}
 		$('#hintText').text("The number is between "+hintLowRange+" and "+hintTopRange);
 		$('#hint').remove();
-	}
+	});
 
 	// Allow the "Player" to Play Again
 
-	function playAgain(){
+	$('#restart').click(function playAgain(){
 		location.reload();
+	});
+
+	function restartOnEnter(){
+		// change the keypress event from clicking "submit" to clicking "restart"
 	}
 
-// }();
+	
+}();
