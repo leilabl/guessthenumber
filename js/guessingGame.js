@@ -1,4 +1,4 @@
-var game = function () {
+(function(){
     var guesses = [];
 	var playersGuess="";
 
@@ -41,21 +41,22 @@ var game = function () {
 		if (isNaN(playersGuess) || playersGuess < 1 || playersGuess > 100 ) {
 		    $('.alert-danger').css("display", "block");
 		    $('#guess').val('');
+		    $('#status').text('');
 		    return false;
 		} else {
 			$('.alert-danger').css("display", "none");
 			if (guesses.length < 4){
 			    $('#guess').val('');
 			    $("#guess").focus();
-			    guessCount();
 			    checkGuess();
+			    guessCount();
 			} else {
 				$('#remaining').text("You lost. Please restart the game.");
 				$('#lost').css("display", "block");
 				$('#guess').val('');
 				$('#hintText').text("The number was "+winningNumber);
 				cleanUp();	
-				//restartOnEnter();
+				// restartOnEnter();
 			}
 		}
 	});
@@ -128,8 +129,16 @@ var game = function () {
 	});
 
 	function restartOnEnter(){
+
 		// change the keypress event from clicking "submit" to clicking "restart"
+		
+		// setTimeout(function() {
+		// 	if(event.keyCode == 13){
+		//         $("#restart").click();
+		//     }
+		// }, 2000);
+
+		
 	}
 
-	
-}();
+})();
